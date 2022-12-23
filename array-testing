@@ -4,6 +4,12 @@
 
 using namespace std;
 
+void smiley_face(int i) {
+    for (int j{1}; j <= i; ++j) {
+        std::cout << "=)" << std::endl;
+    }
+}
+
 void display(const std::array<int, 5>& arr) {
     std::cout << "[ ";
     for (auto i : arr) {
@@ -31,9 +37,22 @@ void test1() {
     std::cout << "The back of Array 1 contains the element: " << arr1.back() << "." << std::endl;
 }
 
+void test2() {
+    std::cout << "\nTest2=========================" << std::endl;
+    std::array<int, 5> arr1{ 1,2,3,4,5 };
+    std::array<int, 5> arr2{10,20,30,40,50};
+    display(arr1);
+    display(arr2);
+    arr1.fill(0); //fills whole array with 0.
+    display(arr1);
+    arr1.swap(arr2);
+    display(arr1); //arr1 will now display 10,20,30,40,50
+}
+
 int main()
 {
     test1();
+    test2();
   //std::array <int, 5> a_ex {1, 2,2,3,4};
   //  display(a_ex); #display function test#
     return 0;
