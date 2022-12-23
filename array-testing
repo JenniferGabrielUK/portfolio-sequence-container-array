@@ -1,0 +1,40 @@
+// portfolio-sequence-container-array.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+#include <array>
+
+using namespace std;
+
+void display(const std::array<int, 5>& arr) {
+    std::cout << "[ ";
+    for (auto i : arr) {
+        std::cout << i << ", ";
+    }
+    std::cout << "]" << std::endl;
+}
+
+void test1() {
+    std::cout << "\nTest1========================" << std::endl;
+    std::array<int, 5> arr1{ 1,2,3,4,5 };
+    std::array<int, 5> arr2;
+    std::array<int, 10> arr3 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    display(arr1);
+    display(arr2); //elements contain garbage data as uninitialized
+    arr2 = { 10,20,30,40,50 };
+    arr1[0] = 1000; //changes the 1, to 1000 in arr1
+    arr1.at(1) = 2000; //changes the 2, to 2000 in arr1
+    display(arr1);
+    std::cout << "Array 1 contains " << arr1.size() << " elements." << std::endl;
+    std::cout << "Array 2 contains " << arr2.size() << " elements." << std::endl;
+    std::cout << "The front of Array 1 contains the element: " << arr1.front() << "." << std::endl;
+    std::cout << "The back of Array 3 contains the element: " << arr3.back() << "." << std::endl;
+    std::cout << "The front of Array 2 contains the element: " << arr2.front() << "." << std::endl;
+    std::cout << "The back of Array 1 contains the element: " << arr1.back() << "." << std::endl;
+}
+
+int main()
+{
+    test1();
+  //std::array <int, 5> a_ex {1, 2,2,3,4};
+  //  display(a_ex); #display function test#
+    return 0;
+}
