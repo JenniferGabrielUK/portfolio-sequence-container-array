@@ -49,12 +49,28 @@ void test2() {
     display(arr1); //arr1 will now display 10,20,30,40,50
 }
 
+void test3() {
+    std::cout << "\nTest3==========================" << std::endl;
+    std::array<int, 5> arr1{ 1,2,3,4,5 };
+    std::array<int, 5> arr2{}; //initialized to 0's
+    int* ptr = arr1.data();
+    std::cout << "The hexadeciaml address of the first element in the array is " << ptr << "." << std::endl; 
+    *ptr = 10000;
+    display(arr1);
+    int* ptr2 = arr2.data();
+    std::cout << *ptr2 << std::endl;
+    *ptr2 = 10000;
+    display(arr2);
+    int* ptr3 = arr1.data();
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
   //display(a_ex); #display function test#
     test1();
     test2();
+    test3();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
