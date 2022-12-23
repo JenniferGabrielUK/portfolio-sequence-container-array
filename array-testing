@@ -1,6 +1,7 @@
 // portfolio-sequence-container-array.cpp : This file contains the 'main' function. Program execution begins and ends there.
 #include <iostream>
 #include <array>
+#include <algorithm>
 
 using namespace std;
 
@@ -64,6 +65,26 @@ void test3() {
     int* ptr3 = arr1.data();
 }
 
+void test4() {
+    std::cout << "\nTest4==========================" << std::endl;
+    std::array<int, 5> arr1{ 2,3,5,4,1 };
+    display(arr1);
+    std::sort(arr1.begin(), arr1.end()); //#include algorithm required
+    display(arr1);
+    std::array<int, 10>  arr2 {2, 5, 3, 4, 6, 8, 7, 9, 10};
+    std::cout << "[ ";
+    for (auto i : arr2) {
+        std::cout << i << ", ";
+    }
+    std::cout << "]" << std::endl;
+    std::sort(arr2.begin(), arr2.end());
+    std::cout << "[ ";
+    for(auto i : arr2) {
+        std::cout << i << ", ";
+    }
+    std::cout << "]" << std::endl;
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
@@ -71,6 +92,7 @@ int main()
     test1();
     test2();
     test3();
+    test4();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
