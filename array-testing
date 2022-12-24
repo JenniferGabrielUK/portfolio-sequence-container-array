@@ -142,6 +142,19 @@ void test8() {
     std::cout << "The number " << select_count << " is found " << count << " times in Array 3." << std::endl;
 }
 
+void test9() {
+    std::cout << "\nTest9==================" << std::endl;
+    std::array <int, 10> arr1{ 1,2,3,4,11,24,56,201,456,33 };
+    std::cout << "Array 1" << std::endl;
+    std::cout << "[ ";
+    for (auto i : arr1) {
+        std::cout << i << ", ";
+    }
+    std::cout << "]" << std::endl;
+    int count = count_if(arr1.begin(), arr1.end(), [](int x) {return x >= 10 && x <= 200; });
+    std::cout << "Array 1 contains " << count << " numbers between 10 and 200." << std::endl; 
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
@@ -154,6 +167,7 @@ int main()
     test6();
     test7();
     test8();
+    test9();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
