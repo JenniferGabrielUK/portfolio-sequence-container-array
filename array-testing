@@ -95,6 +95,7 @@ void test5() {
 }
 
 void test6() {
+    std::cout << "\nTest6=============================" << std::endl;
     std::array <int, 5> arr1{ 2,3,3,4,5 };
     std::array <int, 5> arr2{ 1,2,3,4,5 };
     auto adjacent = std::adjacent_find(arr1.begin(), arr1.end());
@@ -109,6 +110,16 @@ void test6() {
         std::cout << "No adjacent element found." << std::endl;
 }
 
+void test7() {
+    std::cout << "\nTest7=============================" << std::endl;
+    //accumulate is found in #include <numeric>
+    std::array <int, 10> arr1 {1, 2, 3, 4, 5, 6, 7, 8, 9, 1};
+    int sum = std::accumulate(arr1.begin(), arr1.end(), 0);
+    std::cout << "The sum of Array 1 = " << sum << std::endl;
+    sum = std::accumulate(arr1.begin(), arr1.end(), 10000);
+    std::cout << "The sum of Array 1 + 10000 = " << sum << std::endl;
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
@@ -119,6 +130,7 @@ int main()
     test4();
     test5();
     test6();
+    test7();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
