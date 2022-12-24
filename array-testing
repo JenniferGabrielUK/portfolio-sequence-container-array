@@ -85,6 +85,15 @@ void test4() {
     std::cout << "]" << std::endl;
 }
 
+void test5() {
+    std::cout << "\nTest5=============================" << std::endl;
+    std::array <int, 5> arr1 {9, 3, 3, 5, 4};
+    std::array <int, 5> ::iterator min_num = std::min_element(arr1.begin(), arr1.end()); //std::array iterator called min_num set to the min_element over arr1 begin and end.
+    auto max_num = std::max_element(arr1.begin(), arr1.end()); //second iterator auto used for type, max_element over arr1 begin and end. 
+    std::cout << "Max element in Array: " << *max_num << "." << std::endl;
+    std::cout << "Min element in Array: " << *min_num << "." << std::endl;
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
@@ -93,6 +102,7 @@ int main()
     test2();
     test3();
     test4();
+    test5();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
