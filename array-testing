@@ -94,6 +94,21 @@ void test5() {
     std::cout << "Min element in Array: " << *min_num << "." << std::endl;
 }
 
+void test6() {
+    std::array <int, 5> arr1{ 2,3,3,4,5 };
+    std::array <int, 5> arr2{ 1,2,3,4,5 };
+    auto adjacent = std::adjacent_find(arr1.begin(), arr1.end());
+    if (adjacent != arr1.end())
+        std::cout << "Adjacent element found with value: " << *adjacent << std::endl;
+    else
+        std::cout << "No adjacent elements found." << std::endl;
+    adjacent = std::adjacent_find(arr2.begin(), arr2.end());
+    if (adjacent != arr2.end())
+        std::cout << "Adjacent element found with value: " << *adjacent << std::endl;
+    else
+        std::cout << "No adjacent element found." << std::endl;
+}
+
 int main()
 {
   //std::array <int, 5> a_ex {1, 2,2,3,4};
@@ -103,6 +118,7 @@ int main()
     test3();
     test4();
     test5();
+    test6();
     std::cout << "Smiley count: ";
     int select1;
     cin >> select1;
